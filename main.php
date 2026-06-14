@@ -1,19 +1,22 @@
 <?php
-function tampilSalam($nama, $waktu = "pagi")
+function tampilSalam($nama)
 {
-    $sapaan = [
-        "pagi"  => "Selamat pagi",
-        "siang" => "Selamat siang",
-        "sore"  => "Selamat sore",
-        "malam" => "Selamat malam",
-    ];
+    $jam = (int) date("H");
 
-    $salam = $sapaan[$waktu] ?? "Halo";
+    if ($jam >= 5 && $jam < 11) {
+        $salam = "Selamat pagi";
+    } elseif ($jam >= 11 && $jam < 15) {
+        $salam = "Selamat siang";
+    } elseif ($jam >= 15 && $jam < 19) {
+        $salam = "Selamat sore";
+    } else {
+        $salam = "Selamat malam";
+    }
 
-    return $salam . ", " . $nama . "! Semoga harimu menyenangkan.";
+    return $salam . ", " . $nama . "!";
 }
 
-echo tampilSalam("Putra", "pagi");
+echo tampilSalam("Putra");
 
 function tambah($a, $b)
 {
