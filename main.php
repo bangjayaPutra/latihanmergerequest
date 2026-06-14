@@ -1,10 +1,19 @@
 <?php
-function tampilSalam($nama)
+function tampilSalam($nama, $waktu = "pagi")
 {
-    return "Halo, " . $nama . "!";
+    $sapaan = [
+        "pagi"  => "Selamat pagi",
+        "siang" => "Selamat siang",
+        "sore"  => "Selamat sore",
+        "malam" => "Selamat malam",
+    ];
+
+    $salam = $sapaan[$waktu] ?? "Halo";
+
+    return $salam . ", " . $nama . "! Semoga harimu menyenangkan.";
 }
 
-echo tampilSalam("Putra");
+echo tampilSalam("Putra", "pagi");
 
 function tambah($a, $b)
 {
