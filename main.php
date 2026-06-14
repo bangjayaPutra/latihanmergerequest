@@ -27,6 +27,9 @@ echo tambah(10, 5);
 
 function luasPersegi($sisi)
 {
+     if ($sisi < 0) {
+        return "Sisi tidak boleh negatif";
+    }
     return $sisi * $sisi;
 }
 
