@@ -1,7 +1,19 @@
 <?php
 function tampilSalam($nama)
 {
-    return "Halo, " . $nama . "!";
+    $jam = (int) date("H");
+
+    if ($jam >= 5 && $jam < 11) {
+        $salam = "Selamat pagi";
+    } elseif ($jam >= 11 && $jam < 15) {
+        $salam = "Selamat siang";
+    } elseif ($jam >= 15 && $jam < 19) {
+        $salam = "Selamat sore";
+    } else {
+        $salam = "Selamat malam";
+    }
+
+    return $salam . ", " . $nama . "!";
 }
 
 echo tampilSalam("Putra");
