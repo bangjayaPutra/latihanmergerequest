@@ -20,9 +20,12 @@ echo tampilSalam("Putra");
 
 function tambah($a, $b)
 {
-    return $a + $b;
+    if (!is_numeric($a) || !is_numeric($b)) {
+        return "Input harus berupa angka";
+    }
+    $hasil = $a + $b;
+    return "Hasil penjumlahan " . $a . " + " . $b . " = " . $hasil;
 }
-
 echo tambah(10, 5);
 
 function luasPersegi($sisi)
